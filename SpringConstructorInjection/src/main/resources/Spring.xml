@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="Student" class="org.challenge.Student">
+        <constructor-arg index="0" type="int" value="171" />
+        <constructor-arg index="1" value="Moe Yassine" />
+        <constructor-arg index="2">
+            <list>
+                <ref bean="phone1" />
+                <ref bean="phone2" />
+                <ref bean="phone3" />
+            </list>
+        </constructor-arg>
+        <constructor-arg index="3" ref="address"/>
+    </bean>
+
+    <bean id="phone1" class="org.challenge.Phone">
+        <constructor-arg index="0" value="7179254433" />
+    </bean>
+    <bean id="phone2" class="org.challenge.Phone">
+        <constructor-arg index="0" value="3456789101" />
+    </bean>
+    <bean id="phone3" class="org.challenge.Phone">
+        <constructor-arg index="0" value="7775556666" />
+    </bean>
+
+    <bean id="address" class="org.challenge.Address">
+        <constructor-arg index="0" value="Detroit" />
+        <constructor-arg index="1" value="Mi" />
+        <constructor-arg index="2" value="US" />
+        <constructor-arg index="3" value="48228" />
+    </bean>
+
+
+
+</beans>

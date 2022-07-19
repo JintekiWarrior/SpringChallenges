@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="Student" class="org.challenge.Student">
+        <property name="id" value="123" />
+        <property name="name" value="Moe Yassine" />
+        <property name="ph">
+            <list>
+                <ref bean="phone1" />
+                <ref bean="phone2" />
+                <ref bean="phone3" />
+            </list>
+        </property>
+        <property name="add" ref="address" />
+    </bean>
+
+    <bean id="phone1" class="org.challenge.Phone">
+        <property name="mob" value="7179254433" />
+    </bean>
+    <bean id="phone2" class="org.challenge.Phone">
+        <property name="mob" value="3456789101" />
+    </bean>
+    <bean id="phone3" class="org.challenge.Phone">
+        <property name="mob" value="7775556666" />
+    </bean>
+
+    <bean id="address" class="org.challenge.Address">
+        <property name="city" value="Detroit" />
+        <property name="state" value="Mi" />
+        <property name="country" value="USA" />
+        <property name="zipcode" value="48228" />
+    </bean>
+
+</beans>
