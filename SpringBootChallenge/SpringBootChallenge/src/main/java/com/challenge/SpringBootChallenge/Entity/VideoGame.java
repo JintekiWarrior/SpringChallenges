@@ -3,7 +3,7 @@ package com.challenge.SpringBootChallenge.Entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tb2_videoGames")
+@Table(name = "tb2_video_games")
 public class VideoGame
 {
     @Id
@@ -14,6 +14,11 @@ public class VideoGame
     private String title;
     private String genre;
     private String publisher;
+
+    public VideoGame()
+    {
+
+    }
 
     public VideoGame(String title, String genre, String publisher) {
         this.title = title;
